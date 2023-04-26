@@ -3,10 +3,26 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     cartao: {
         display: "flex",
-        minHeight: '25%',
+        flexDirection: 'row-reverse',
+        height: '25%',
         maxWidth: '90%',
         alignItems: 'center',
         backgroundColor: '#0077b6',
+    },
+    imagemContainer: {
+        height: '100%',
+        maxWidth: '50%',
+        display: 'flex',
+        flex: 1,
+    },
+    imagem: {
+      height: 100,
+      width: 200,
+      resizeMode: 'contain',
+    },
+    informacoes: {
+        height: '100%',
+        maxWidth: '50%'
     },
     tituloContainer: {
         backgroundColor: '#023e8a',
@@ -18,8 +34,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Aller',
         color: '#ee9b00',
     },
-    subtituloContainer: {
-      maxHeight: '30%', 
+    sinopseContainer: {
+      maxHeight: '40%', 
       marginBottom: '10px',
     },
     subtitulo: {

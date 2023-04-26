@@ -7,7 +7,7 @@ export default function App() {
   const [filmes, setFilmes] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.otaviolube.com/api/filmes")
+    fetch("https://api.otaviolube.com/api/filmes?populate=*")
       .then((res) => {
         if(res.ok){
           console.log('deu certo')
