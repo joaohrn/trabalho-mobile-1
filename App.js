@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import Cartao from "./src/components/filmeCard/scripts";
 
 export default function App() {
@@ -18,11 +18,11 @@ export default function App() {
       })
       .then((data) => {
         setFilmes(data.data)
-      });
+      })
       }, []);
   return (
     <View style={styles.container}>
-      {filmes.map((filme) => <Cartao filme={filme.attributes} key={filme.id} />)}
+      { filmes.length > 0 ? filmes.map((filme) => <Cartao filme={filme.attributes} key={filme.id} />) : <Text>Carregando...</Text>}
       <StatusBar style="auto" />
     </View>
   );
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     gap: '10px',
   },
 });

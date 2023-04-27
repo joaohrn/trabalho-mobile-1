@@ -1,6 +1,7 @@
 import React from "react";
-import { Button, Text, Image, View, ScrollView } from "react-native";
+import { Text, Image, View, ScrollView } from "react-native";
 import { styles } from "./styles";
+import { TouchableOpacity } from "react-native";
 
 export default function Cartao(props) {
   return (
@@ -16,9 +17,9 @@ export default function Cartao(props) {
         <ScrollView style={styles.sinopseContainer}>
           <Text style={styles.sinopse}>{props.filme.sinopse}</Text>
         </ScrollView>
-        <View style={styles.comprar}>
-          <Button title="comprar"></Button>
-        </View>
+        <TouchableOpacity style={styles.comprar}>
+          <Text style={styles.botao}>comprar</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

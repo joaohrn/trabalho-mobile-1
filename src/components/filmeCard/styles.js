@@ -3,31 +3,34 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     cartao: {
         display: "flex",
-        flexDirection: 'row-reverse',
-        height: '25%',
+        flexDirection: 'row',
+        height: '250px',
         maxWidth: '90%',
         alignItems: 'center',
         backgroundColor: '#0077b6',
+        overflow: 'hidden',
     },
     imagemContainer: {
-        height: '100%',
         maxWidth: '50%',
         display: 'flex',
-        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden',
     },
     imagem: {
-      height: 100,
-      width: 200,
-      resizeMode: 'contain',
+      width: 150,
+      height: 300,
+      resizeMode: 'center',
     },
     informacoes: {
         height: '100%',
-        maxWidth: '50%'
+        maxWidth: '50%',
+        gap: '10px',
     },
     tituloContainer: {
         backgroundColor: '#023e8a',
         minWidth: '100%',
-        textAlign: 'center'
+        textAlign: 'center',
     },
     titulo: {
         fontSize: '2rem',
@@ -49,8 +52,17 @@ const styles = StyleSheet.create({
     },
     comprar: {
         minWidth: '20%',
-        justifyContent:'center',
+        height: '10%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FC4F00'
     },
+    botao: {
+        fontSize: '24px',
+        fontWeight: 'bold',
+        fontFamily: 'Aller'
+    }
     
 })
 
