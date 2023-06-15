@@ -1,31 +1,22 @@
+import "react-native-gesture-handler"
+import { NavigationContainer } from "@react-navigation/native"
+import { createStackNavigator } from "@react-navigation/stack"
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import Cartao from "./src/components/filmeCard/scripts";
+import FilmesPage from "./src/pages/FilmesPage";
+import LoginPage from "./src/pages/login";
 
 export default function App() {
-  const [filmes, setFilmes] = useState([]);
-
-  useEffect(() => {
-    fetch("https://api.otaviolube.com/api/filmes?populate=*")
-      .then((res) => {
-        if(res.ok){
-          console.log('deu certo')
-          return(res.json())
-        }else{
-          console.log('caiu')
-        }
-      })
-      .then((data) => {
-        setFilmes(data.data)
-      })
-      }, []);
-  return (
-    <View style={styles.container}>
-      { filmes.length > 0 ? filmes.map((filme) => <Cartao filme={filme.attributes} key={filme.id} />) : <Text>Carregando...</Text>}
-      <StatusBar style="auto" />
-    </View>
-  );
+  const Stack = createStackNavigator()
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="LoginPage" screenOptions={{headerShown:false}}>
+        <Stack.Screen name="LoginPage" component={LoginPage}  />
+        <Stack.Screen name="FilmesPage" component={FilmesPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
 const styles = StyleSheet.create({
