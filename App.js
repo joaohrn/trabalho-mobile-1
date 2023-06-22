@@ -6,17 +6,19 @@ import { useEffect, useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import FilmesPage from "./src/pages/FilmesPage";
 import LoginPage from "./src/pages/login";
+import FilmeDetails from "./src/pages/FilmeDetails";
+import RegistrationPage from "./src/pages/RegistrationPage";
+import Navigation from "./src/routing/navigation";
+import AuthProvider from "./src/context/auth";
 
 export default function App() {
-  const Stack = createStackNavigator()
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LoginPage" screenOptions={{headerShown:false}}>
-        <Stack.Screen name="LoginPage" component={LoginPage}  />
-        <Stack.Screen name="FilmesPage" component={FilmesPage} />
-      </Stack.Navigator>
+      <AuthProvider>
+        <Navigation />
+      </AuthProvider>
     </NavigationContainer>
-  )
+ )
 }
 
 const styles = StyleSheet.create({

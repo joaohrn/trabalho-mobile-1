@@ -3,10 +3,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     cartao: {
         display: "flex",
-        height: '95%',
-        maxWidth: '90%',
+        height: '100%',
         alignItems: 'center',
-        marginVertical: '10px',
         backgroundColor: '#0077b6',
         overflow: 'hidden',
     },

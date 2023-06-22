@@ -2,6 +2,7 @@ import React from "react";
 import { Text, Image, View, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { TouchableOpacity } from "react-native";
+import { Link } from "@react-navigation/native";
 
 export default function Cartao(props) {
   return (
@@ -14,9 +15,9 @@ export default function Cartao(props) {
           <Text style={styles.titulo}>{props.filme.titulo}</Text>
           <Text style={styles.subtitulo}>{props.filme.subtitulo}</Text>
         </View>
-        <ScrollView style={styles.sinopseContainer}>
-          <Text style={styles.sinopse}>{props.filme.sinopse}</Text>
-        </ScrollView>
+        <View style={styles.sinopseContainer}>
+          {props.filme.sinopse.length >= 200 ? <Text style={styles.sinopse}>{props.filme.sinopse.substring(0, 200)}...<Link to={{screen: 'filme details', params: {filme: props.filme}}}>saiba mais</Link></Text> :<Text style={styles.sinopse}>{props.filme.sinopse}</Text>}
+        </View>
         <TouchableOpacity style={styles.comprar}>
           <Text style={styles.botao}>comprar</Text>
         </TouchableOpacity>
