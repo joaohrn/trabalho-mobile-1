@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
         display: "flex",
         height: '95%',
         maxWidth: '90%',
+        justifyContent:'space-between',
         alignItems: 'center',
         marginVertical: '10px',
         backgroundColor: '#0077b6',
